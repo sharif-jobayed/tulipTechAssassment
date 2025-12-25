@@ -7,9 +7,12 @@ import { ContactPage } from "../pages/contactPage";
 
 describe(`Tuliptech Assessment`, async () => {
 
-	const homePage = new HomePage();
+	let homePage;
+	let contactPage;
 
-	beforeEach(`Setup the browser`, async () => {
+	beforeEach(`Setup the browser & go to the home page`, async () => {
+		homePage = new HomePage();
+
 		await browser.setWindowSize(1440, 900);
 		await homePage.goToURL();
 
@@ -18,16 +21,14 @@ describe(`Tuliptech Assessment`, async () => {
 	});
 
 	it(`Form Submission Validation`, async () => {
-		await homePage.goToContactPage();
+		await homePage.clickContactMenuLink();
 
-		const contactPage = new ContactPage();
+		contactPage = new ContactPage();
 
-		if (await contactPage.isPageOpen()) {
-			await contactPage.clickSubmit();
-			assert.isTrue(await contactPage.areAlertsVisible(), `Alerts are not visible`);
-		}
+		contactPage.isPageOpen();
+		await contactPage.clickSubmit();
 
-
+		const alertsAreVisible = await contactPage.areAlertsVisible();
 	});
 
 });

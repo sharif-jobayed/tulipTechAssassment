@@ -38,15 +38,12 @@ class BasePage {
 		});
 
 		if ((await this.pageIdentifier()).isDisplayed()) {
+			console.log(`The page is open`);
 			return true;
 		} else {
+			console.log(`The page isn't open`);
 			return false;
 		}
-	}
-
-	async clickOnElement(locator) {
-		(await this.getElement(locator)).click();
-		console.log(`The ${locator} was clicked}`);
 	}
 
 }

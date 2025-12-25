@@ -10,8 +10,7 @@ class ContactPage extends BasePage {
 	}
 
 	async clickSubmit() {
-		(await this.submitBtn).click();
-		console.log(`The submit button was clicked}`);
+		return (await this.submitBtn).click();
 	}
 
 	async areAlertsVisible() {

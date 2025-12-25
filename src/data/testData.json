@@ -1,0 +1,9 @@
+
+{
+	"BaseURL": "https://practicesoftwaretesting.com/",
+	"Timeouts": {
+		"Min": 5000,
+		"Med": 15000,
+		"Max": 30000
+	}
+}

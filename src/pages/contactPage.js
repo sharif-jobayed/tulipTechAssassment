@@ -14,7 +14,7 @@ class ContactPage extends BasePage {
 		this.subjectOptions = this.getElements(`(//select[@data-test="subject"])/option`);
 		this.messageFld = this.getElement(`//textarea[@id='message']`);
 
-	
+
 	}
 
 	async clickSubmit() {
@@ -50,9 +50,9 @@ class ContactPage extends BasePage {
 	}
 
 	async selectSubject(subject) {
-		for(const option of await this.subjectOptions) {
-			if(await option.isDisplayed()) {
-				if(await option.getText() == subject) {
+		for (const option of await this.subjectOptions) {
+			if (await option.isDisplayed()) {
+				if (await option.getText() == subject) {
 					await option.click();
 					break;
 				}

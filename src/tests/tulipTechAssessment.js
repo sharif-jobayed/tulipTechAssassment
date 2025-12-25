@@ -25,10 +25,13 @@ describe(`Tuliptech Assessment`, async () => {
 
 		contactPage = new ContactPage();
 
-		contactPage.isPageOpen();
+		await contactPage.isPageOpen();
 		await contactPage.clickSubmit();
 
 		const alertsAreVisible = await contactPage.areAlertsVisible();
+		assert.isTrue(alertsAreVisible, `Alerts are not visible`);
+
+		await contactPage.submitFillDataAndSubmitForm();
 	});
 
 });

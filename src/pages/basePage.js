@@ -1,4 +1,3 @@
-import { assert } from "chai";
 import { BaseURL, Timeouts } from "../data/testData.json" assert {type: "json"};
 import { $, $$, browser } from "@wdio/globals";
 
